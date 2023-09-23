@@ -1,0 +1,120 @@
+% \documentclass[twoside]{article}
+\documentclass{article}
+\setlength{\oddsidemargin}{0.25 in}
+\setlength{\evensidemargin}{-0.25 in}
+\setlength{\topmargin}{-0.6 in}
+\setlength{\textwidth}{6.5 in}
+\setlength{\textheight}{8.5 in}
+\setlength{\headsep}{0.75 in}
+\setlength{\parindent}{0 in}
+\setlength{\parskip}{0.1 in}
+
+\usepackage{amsmath,amsthm,amsfonts,graphicx}
+\usepackage{quiver} % diagrams
+
+% Set the spacing between columns
+\usepackage{multicol}
+\setlength{\columnsep}{1pt} 
+
+\newcommand{\boxtitle}[1]{
+   \pagestyle{myheadings}
+   \thispagestyle{plain}
+   \newpage
+   \setcounter{page}{1}
+   \noindent
+   \begin{center}
+   \framebox{
+      \vbox{\vspace{2mm}
+       \vspace{4mm}
+       \hbox to 6.28in { {\Large \hfill #1 \hfill} }
+       \vspace{2mm}
+      \vspace{2mm}}
+   }
+   \end{center}
+}
+
+\newtheoremstyle{problemstyle}
+        {3pt} {3pt} {\normalfont} {}
+        {\bfseries\itshape}
+        {\normalfont\bfseries:}
+        {.5em}{}
+\theoremstyle{problemstyle}
+
+% theorems, lemmas, problems, etc
+\newcommand{\problem}[1]{\noindent \textbf{#1.} \hspace{-1 pt}}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{claim}[theorem]{Claim}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+
+%%% math notation %%%
+% general
+\newcommand\E{\mathbb{E}}
+\newcommand\R{\mathbb{R}}
+\newcommand{\inv}[1]{#1^{-1}}
+\newcommand{\ezset}[3]{\{#1, #2, \dots, #3\}}
+
+% algebra
+\newcommand{\id}[1]{\mathrm{id}_#1}
+\newcommand{\Perm}[1]{\mathrm{Perm}\:#1\:}
+\newcommand{\Aut}[1]{\mathrm{Aut}\:#1\:}
+\newcommand{\Ker}[1]{\mathrm{Ker}\:#1\:}
+\newcommand{\im}{\mathrm{im}}
+\newcommand{\conj}{\mathrm{conj}}
+
+% calculus
+\newcommand{\del}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand\grad{\nabla}
+
+% matrices and vectors
+\newcommand{\colvec}[2]{\begin{bmatrix}#1\\ \vdots \\ #2\end{bmatrix}}
+\newcommand{\mat}[4]{\begin{bmatrix}#1 & \hdots & #2 \\ \vdots & \ddots & \vdots \\ #3 & \hdots & #4 \end{bmatrix}}
+
+%%% spacing macros %%%
+\newcommand\hbuf{\quad\quad}
+
+
+\begin{document}
+\boxtitle{Standard LaTeX Setup}
+\section{General}
+\problem{1} Prove $a^n + b^n = c^n$ has no integer solutions for $n > 2$.
+
+\section{Diagrams}
+\[\begin{tikzcd}
+	G && G && G
+	\arrow["\varphi", from=1-1, to=1-3]
+	\arrow["\psi", from=1-3, to=1-5]
+	\arrow["{\psi \circ \varphi}"', curve={height=12pt}, from=1-1, to=1-5]
+\end{tikzcd}\]
+
+\section{Macros}
+
+\verb+\ezset 1 2 n+ $\to \ezset 1 2 n$
+
+\verb+\grad+ $\to \grad$
+
+\verb+\del{a}{b}+ $\to \del{a}{b}$
+
+\verb+\inv{a}+ $\to \inv a$
+
+\verb+\id{a}+ $\to \id{a}$
+
+\verb+\im \conj + $\to \im \; \conj$
+
+\verb+\Perm G \Aut G \Ker G + $\to \Perm G \Aut G \Ker G$
+
+\verb+\mat a b c d+ $\to$ \[\mat a b c d \]
+
+\verb+\colvec a b+ $\to$ \[\colvec a b\]
+
+
+% imth dmth
+
+    
+
+\end{document}
+
+
+
