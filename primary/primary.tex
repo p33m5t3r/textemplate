@@ -16,7 +16,7 @@
 \usepackage{multicol}
 \setlength{\columnsep}{1pt} 
 
-\newcommand{\boxtitle}[1]{
+\newcommand{\boxtitle}[3]{
    \pagestyle{myheadings}
    \thispagestyle{plain}
    \newpage
@@ -27,6 +27,8 @@
       \vbox{\vspace{2mm}
        \vspace{4mm}
        \hbox to 6.28in { {\Large \hfill #1 \hfill} }
+       \vspace{2mm}
+       \hbox to 6.28in { {\it #2 \hfill #3} }
        \vspace{2mm}
       \vspace{2mm}}
    }
@@ -51,10 +53,14 @@
 
 %%% math notation %%%
 % general
-\newcommand\E{\mathbb{E}}
+\newcommand\N{\mathbb{N}}
+\newcommand\Z{\mathbb{Z}}
+\newcommand\Q{\mathbb{Q}}
 \newcommand\R{\mathbb{R}}
+
+\newcommand{\norm}[1]{\lVert#1\rVert}
 \newcommand{\inv}[1]{#1^{-1}}
-\newcommand{\ezset}[3]{\{#1, #2, \dots, #3\}}
+\newcommand{\tand}{\text{ and }}
 
 % algebra
 \newcommand{\id}[1]{\mathrm{id}_#1}
@@ -63,6 +69,10 @@
 \newcommand{\Ker}[1]{\mathrm{Ker}\:#1\:}
 \newcommand{\im}{\mathrm{im}}
 \newcommand{\conj}{\mathrm{conj}}
+
+% topology
+\newcommand{\intr}[1]{#1^\circ}
+\newcommand{\cl}[1]{\overline{#1}}
 
 % calculus
 \newcommand{\del}[2]{\frac{\partial #1}{\partial #2}}
@@ -77,8 +87,8 @@
 
 
 \begin{document}
-\boxtitle{Standard LaTeX Setup}
-\section{General}
+\boxtitle{Foo}{Bar}{Baz}
+\section{Problem Sets}
 \problem{1} Prove $a^n + b^n = c^n$ has no integer solutions for $n > 2$.
 
 \section{Diagrams}
@@ -89,30 +99,6 @@
 	\arrow["{\psi \circ \varphi}"', curve={height=12pt}, from=1-1, to=1-5]
 \end{tikzcd}\]
 
-\section{Macros}
-
-\verb+\ezset 1 2 n+ $\to \ezset 1 2 n$
-
-\verb+\grad+ $\to \grad$
-
-\verb+\del{a}{b}+ $\to \del{a}{b}$
-
-\verb+\inv{a}+ $\to \inv a$
-
-\verb+\id{a}+ $\to \id{a}$
-
-\verb+\im \conj + $\to \im \; \conj$
-
-\verb+\Perm G \Aut G \Ker G + $\to \Perm G \Aut G \Ker G$
-
-\verb+\mat a b c d+ $\to$ \[\mat a b c d \]
-
-\verb+\colvec a b+ $\to$ \[\colvec a b\]
-
-
-% imth dmth
-
-    
 
 \end{document}
 
